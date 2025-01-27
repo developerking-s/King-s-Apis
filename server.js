@@ -50,7 +50,7 @@ app.get('/generate-image', async (req, res) => {
 
 // Rota para carregar uma imagem customizada e adicionar texto
 app.get('/custom-image', async (req, res) => {
-  const { imageUrl, text = 'Zump Bot', textColor = '#FFFFFF' } = req.query;
+  const { imageUrl, text = 'Test', textColor = '#FFFFFF' } = req.query;
 
   if (!imageUrl) {
     return res.status(400).send('Por favor, forneça a URL da imagem em imageUrl.');
@@ -86,6 +86,6 @@ app.get('/custom-image', async (req, res) => {
 
 // Iniciar o servidor
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+  console.log(`Servidor rodando em http://king-s-apis.vercel.app/:${PORT}`);
 });
                                 
