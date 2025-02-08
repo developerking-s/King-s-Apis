@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>King's Apis </title>
+  <meta name="description" content="King's Apis - Desenvolvimento de APIs modernas, suporte dedicado e integração eficiente.">
+  <meta name="keywords" content="APIs, Desenvolvimento Web, Backend, Node.js, MongoDB">
+  <meta name="author" content="King's Apis">
+  <title>King's Apis | Soluções Modernas</title>
   <style>
     /* Reset básico */
     * {
@@ -108,7 +111,7 @@
       background-color: #0056b3;
     }
 
-    #apis, #embed, #support, #blog {
+    #apis, #about, #contact, #support, #blog {
       text-align: center;
     }
 
@@ -129,7 +132,6 @@
       color: white;
     }
 
-    /* Tema Escuro */
     .dark-mode {
       background-color: #212529;
       color: white;
@@ -152,14 +154,36 @@
     .dark-mode footer {
       background: #1d2124;
     }
+
+    #backToTop {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #007bff;
+      color: white;
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: none;
+      transition: background-color 0.3s;
+    }
+
+    #backToTop:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="menu">
       <ul>
+        <li><a href="#about">Sobre Nós</a></li>
+        <li><a href="#apis">APIs</a></li>
         <li><a href="#support">Suporte</a></li>
         <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contato</a></li>
       </ul>
       <button id="themeToggle">🌗 Tema</button>
     </div>
@@ -171,29 +195,37 @@
     <button onclick="navigateToAPIs()">Descubra as APIs</button>
   </section>
   
+  <section id="about">
+    <h2>Sobre Nós</h2>
+    <p>King's Apis é uma plataforma dedicada a soluções modernas e personalizadas para desenvolvimento de APIs.</p>
+  </section>
+
   <section id="apis">
     <h2>Nossas APIs</h2>
     <p>APIs robustas construídas com tecnologias como Node.js, Express e MongoDB.</p>
   </section>
 
-  <section id="embed">
-    <h2></h2>
-    <iframe src="https://embed.lottiefiles.com/animation/63487"></iframe>
-  </section>
-  
   <section id="support">
     <h2>Suporte</h2>
     <p>Estamos aqui para ajudar. Entre em contato com nossa equipe de suporte.</p>
   </section>
-  
+
   <section id="blog">
     <h2>Blog</h2>
     <p>Explore artigos, tutoriais e dicas sobre desenvolvimento de APIs.</p>
+  </section>
+  
+  <section id="contact">
+    <h2>Contato</h2>
+    <p>Email: contato@kingsapis.com</p>
+    <p>Telefone: (11) 99999-9999</p>
   </section>
 
   <footer>
     <p>&copy; 2025 King's Apis. Todos os direitos reservados.</p>
   </footer>
+
+  <button id="backToTop" onclick="scrollToTop()">⬆ Voltar ao Topo</button>
 
   <script>
     // Alternar entre tema claro e escuro
@@ -205,6 +237,20 @@
     // Navegar suavemente para a seção de APIs
     function navigateToAPIs() {
       document.getElementById('apis').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Botão de voltar ao topo
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </body>
