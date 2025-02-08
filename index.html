@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>King's Apis</title>
+  <title>API Professional Site</title>
   <style>
     /* Reset básico */
     * {
@@ -13,18 +13,31 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
       transition: background-color 0.3s, color 0.3s;
+      line-height: 1.6;
     }
 
     header {
-      background: #333;
-      padding: 1rem 0;
+      background: linear-gradient(135deg, #007bff, #6610f2);
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .menu {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu ul {
+      display: flex;
       list-style: none;
     }
 
@@ -32,108 +45,151 @@
       margin: 0 1rem;
     }
 
-    .menu a, #themeToggle {
-      color: white;
+    .menu a {
       text-decoration: none;
+      color: white;
       font-weight: bold;
-      background: #555;
       padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s;
+      border-radius: 4px;
+      transition: background-color 0.3s;
     }
 
-    .menu a:hover, #themeToggle:hover {
-      background: #777;
+    .menu a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    #themeToggle {
+      background: white;
+      color: #007bff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #themeToggle:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     #intro {
       text-align: center;
+      background: #e9ecef;
+      border-radius: 8px;
       padding: 2rem;
-      background: #f0f0f0;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #intro button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    #intro button:hover {
+      background-color: #0056b3;
     }
 
     #apis, #embed, #support, #blog {
-      padding: 2rem;
       text-align: center;
     }
 
-    .embed-animation {
+    iframe {
       width: 100%;
-      max-width: 500px;
+      max-width: 600px;
       height: 300px;
-      margin: 0 auto;
       border: none;
+      border-radius: 8px;
+      margin: 2rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #333;
+      padding: 2rem;
+      background: #343a40;
       color: white;
     }
 
     /* Tema Escuro */
     .dark-mode {
-      background-color: #121212;
+      background-color: #212529;
       color: white;
     }
 
     .dark-mode header {
-      background: #222;
+      background: linear-gradient(135deg, #6610f2, #007bff);
+    }
+
+    .dark-mode #themeToggle {
+      background: #343a40;
+      color: white;
     }
 
     .dark-mode #intro {
-      background: #1e1e1e;
-    }
-
-    .dark-mode .menu a, .dark-mode #themeToggle {
-      background: #444;
+      background: #343a40;
+      color: white;
     }
 
     .dark-mode footer {
-      background: #222;
+      background: #1d2124;
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <ul class="menu">
+    <div class="menu">
+      <ul>
         <li><a href="#apis">APIs</a></li>
         <li><a href="#support">Suporte</a></li>
         <li><a href="#blog">Blog</a></li>
-        <li>
-          <button id="themeToggle">Modo Escuro</button>
-        </li>
       </ul>
-    </nav>
+      <button id="themeToggle">🌗 Tema</button>
+    </div>
   </header>
   
   <section id="intro">
-    <h1>Bem-vindo ao King's Apis</h1>
-    <p>Experiência de desenvolvimento, suporte dedicado e integração fácil.</p>
-    <p>Quem fez essas APIs: Desenvolvedores especializados com foco em performance e escalabilidade.</p>
-    <button onclick="navigateToAPIs()">Ir para as APIs</button>
+    <h1>Bem-vindo ao Site de APIs Profissional</h1>
+    <p>Desenvolvimento avançado, suporte dedicado e integração moderna.</p>
+    <button onclick="navigateToAPIs()">Descubra as APIs</button>
   </section>
   
   <section id="apis">
-    <h2>APIs Criadas</h2>
-    <p>As APIs foram desenvolvidas utilizando Node.js, Express e MongoDB, com integração via REST e GraphQL.</p>
+    <h2>Nossas APIs</h2>
+    <p>APIs robustas construídas com tecnologias como Node.js, Express e MongoDB.</p>
   </section>
 
   <section id="embed">
-    <h2>Novidades</h2>
-    <iframe src="https://embed.lottiefiles.com/animation/63487" class="embed-animation"></iframe>
+    <h2></h2>
+    <iframe src="https://embed.lottiefiles.com/animation/63487"></iframe>
   </section>
   
   <section id="support">
     <h2>Suporte</h2>
-    <p>Para dúvidas, entre em contato com nossa equipe.</p>
+    <p>Estamos aqui para ajudar. Entre em contato com nossa equipe de suporte.</p>
   </section>
   
   <section id="blog">
     <h2>Blog</h2>
-    <p>Confira as últimas atualizações e tutoriais sobre APIs e desenvolvimento web.</p>
+    <p>Explore artigos, tutoriais e dicas sobre desenvolvimento de APIs.</p>
   </section>
 
   <footer>
@@ -141,15 +197,13 @@
   </footer>
 
   <script>
-    // Alternar tema entre claro e escuro
+    // Alternar entre tema claro e escuro
     const themeToggle = document.getElementById('themeToggle');
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-      themeToggle.textContent =
-        document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
     });
 
-    // Navegar para a seção de APIs
+    // Navegar suavemente para a seção de APIs
     function navigateToAPIs() {
       document.getElementById('apis').scrollIntoView({ behavior: 'smooth' });
     }
