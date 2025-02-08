@@ -1,58 +1,158 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>King Apis</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>King's Apis</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background: #333;
+      padding: 1rem 0;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    .menu li {
+      margin: 0 1rem;
+    }
+
+    .menu a, #themeToggle {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: #555;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover, #themeToggle:hover {
+      background: #777;
+    }
+
+    #intro {
+      text-align: center;
+      padding: 2rem;
+      background: #f0f0f0;
+    }
+
+    #apis, #embed, #support, #blog {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .embed-animation {
+      width: 100%;
+      max-width: 500px;
+      height: 300px;
+      margin: 0 auto;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+    }
+
+    /* Tema Escuro */
+    .dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    .dark-mode header {
+      background: #222;
+    }
+
+    .dark-mode #intro {
+      background: #1e1e1e;
+    }
+
+    .dark-mode .menu a, .dark-mode #themeToggle {
+      background: #444;
+    }
+
+    .dark-mode footer {
+      background: #222;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">King Dev</div>
-    <nav class="menu">
-      <ul>
+  <header>
+    <nav>
+      <ul class="menu">
         <li><a href="#apis">APIs</a></li>
-        <li><a href="#suporte">Suporte</a></li>
+        <li><a href="#support">Suporte</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li>
-          <button id="toggle-theme">Alternar Tema</button>
+          <button id="themeToggle">Modo Escuro</button>
         </li>
       </ul>
     </nav>
   </header>
+  
+  <section id="intro">
+    <h1>Bem-vindo ao King's Apis</h1>
+    <p>Experiência de desenvolvimento, suporte dedicado e integração fácil.</p>
+    <p>Quem fez essas APIs: Desenvolvedores especializados com foco em performance e escalabilidade.</p>
+    <button onclick="navigateToAPIs()">Ir para as APIs</button>
+  </section>
+  
+  <section id="apis">
+    <h2>APIs Criadas</h2>
+    <p>As APIs foram desenvolvidas utilizando Node.js, Express e MongoDB, com integração via REST e GraphQL.</p>
+  </section>
 
-  <main>
-    <section id="apis">
-      <h1>APIs</h1>
-      <p>Explore nossas APIs profissionais para integração fácil e rápida em seus projetos.</p>
-      <ul>
-        <li>APIs de Imagem</li>
-        <li>API de Chatgpt</li>
-        <li>APIs de Utilitárias</li>
-      </ul>
-    </section>
-
-    <section id="suporte">
-      <h1>Suporte</h1>
-      <p>Entre em contato com nossa equipe de suporte para assistência personalizada.</p>
-      <form>
-        <label for="name">Nome:</label>
-        <input type="text" id="name" placeholder="Seu nome" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Seu email" required>
-        
-        <label for="message">Mensagem:</label>
-        <textarea id="message" placeholder="Escreva sua mensagem aqui" required></textarea>
-        
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
+  <section id="embed">
+    <h2>Novidades</h2>
+    <iframe src="https://embed.lottiefiles.com/animation/63487" class="embed-animation"></iframe>
+  </section>
+  
+  <section id="support">
+    <h2>Suporte</h2>
+    <p>Para dúvidas, entre em contato com nossa equipe.</p>
+  </section>
+  
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Confira as últimas atualizações e tutoriais sobre APIs e desenvolvimento web.</p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 King Dev. Todos os direitos reservados.</p>
+    <p>&copy; 2025 API Professional. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Alternar tema entre claro e escuro
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      themeToggle.textContent =
+        document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
+    });
+
+    // Navegar para a seção de APIs
+    function navigateToAPIs() {
+      document.getElementById('apis').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
